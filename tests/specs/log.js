@@ -44,14 +44,12 @@ test('log("bar") with styles', function (t) {
 })
 
 test('log.prefix will throw if changed', function (t) {
-  Log.console = {
-    log: simple.stub()
-  }
+  simple.mock(Log.console, 'log', function () {})
   var log = new Log('foo')
 
   t.throws(function () {
     log.prefix = 'test'
   })
   t.end()
-  Log.console = console
+  simple.restore()
 })
