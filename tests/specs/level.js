@@ -20,7 +20,7 @@ test('log.level', function (t) {
 })
 
 test('log.level with invalid name will not change', function (t) {
-  simple.mock(Log.console, 'log', function () {})
+  simple.mock(Log.console, 'log')
   var log = new Log('foo')
 
   t.throws(function () {

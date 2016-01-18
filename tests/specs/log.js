@@ -44,7 +44,7 @@ test('log("bar") with styles', function (t) {
 })
 
 test('log.prefix will throw if changed', function (t) {
-  simple.mock(Log.console, 'log', function () {})
+  simple.mock(Log.console, 'log')
   var log = new Log('foo')
 
   t.throws(function () {
